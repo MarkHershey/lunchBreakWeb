@@ -8,13 +8,16 @@
         <h3>Team:</h3>
     </div>
     <div>
-        <form class="" action="index.html" method="post">
-            <select class="form-control">
-                {% for team in teams %}
-                <option value="{{ team.id }}">{{ team }}</option>
-                {% endfor %}
-            </select>
-        </form>
+
+        <select class="form-control" id="team_select">
+            {% for team in teams %}
+            <option value="{{ team.id }}">{{ team }}</option>
+            {% endfor %}
+        </select>
+
+    </div>
+    <div class="p-3">
+        <h4 id="team_selected"></h4>
     </div>
 
 </div>
@@ -31,11 +34,9 @@
 
     <ul class="list-group p-3">
         <li class="list-group-item active">I'm on Lunch Break</li>
-        <li class="list-group-item"><a href="" class="btn btn-outline-dark">Cras justo odio</a></li>
-        <li class="list-group-item"><a href="" class="btn btn-outline-dark">Dapibus ac facilisis in</a></li>
-        <li class="list-group-item"><a href="" class="btn btn-outline-dark">Morbi leo risus</a></li>
-        <li class="list-group-item"><a href="" class="btn btn-outline-dark">Porta ac consectetur ac</a></li>
-        <li class="list-group-item"><a href="" class="btn btn-outline-dark">Vestibulum at eros</a></li>
+        {% for person in people %}
+        <li class="list-group-item"><a href="" class="btn btn-outline-dark">{{ person }}</a></li>
+        {% endfor %}
     </ul>
 </div>
 
